@@ -26,7 +26,7 @@ function Button({
    font-normal font-['Arial'] leading-none transition-all hover:bg-gray-700`;
 
   if (variant === 'outline') {
-    classname = `${classname} bg-transparent border border-gray-900 text-gray-800 hover:bg-slate-400`;
+    classname = `${classname} bg-transparent border border-gray-900 text-slate-700 hover:bg-slate-300`;
   }
 
   return (
