@@ -3,13 +3,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // components
 import NotFound from '@/modules/error/404';
-import LoginPage from '@/modules/login/LoginPage';
+import Home from '@/modules/home/Home';
 
 function App() {
   const Router = createBrowserRouter([
     {
       path: '/',
-      element: <LoginPage />,
+      element: <Home />,
     },
     {
       path: '*',
@@ -18,7 +18,7 @@ function App() {
   ]);
 
   return (
-    <div className="App">
+    <div className="App w-screen h-screen">
       <RouterProvider router={Router} />
     </div>
   );

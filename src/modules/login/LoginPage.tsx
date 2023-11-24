@@ -5,6 +5,7 @@ import * as yup from 'yup';
 
 // components
 import InputElement, { InputType } from '@/modules/elements/Input.component';
+import Button from '@/modules/elements/Button.component';
 
 const schemaValidation = yup
   .object({
@@ -18,7 +19,7 @@ type FormData = {
   password: string;
 };
 
-function LoginPage() {
+function Login() {
   const {
     register,
     handleSubmit,
@@ -32,37 +33,29 @@ function LoginPage() {
   }
 
   return (
-    <div className="relative w-screen h-screen bg-white flex justify-center items-center">
-      <div className="px-4 md:px-0 max-w-[420px] w-full">
-        <div className="text-black text-xl font-bold font-['Arial'] leading-normal tracking-tight mb-12">
-          Prijavi se na svoj nalog
-        </div>
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full">
-          <InputElement
-            label="E-mail adresa"
-            type={InputType.Email}
-            error={errors}
-            {...register('email', { required: true })}
-          />
-          <InputElement
-            label="Upišite šifru"
-            type={InputType.Pass}
-            error={errors}
-            {...register('password', { required: true })}
-          />
-          <div className="w-full mt-12">
-            <button
-              className="text-white py-3 w-full rounded-full bg-gray-900 text-lg font-normal 
-              font-['Arial'] leading-none transition-all hover:bg-gray-700"
-              type="submit"
-            >
-              Prijavi se na nalog
-            </button>
-          </div>
-        </form>
+    <div className="w-full">
+      <div className="text-black text-xl font-bold font-['Arial'] leading-normal tracking-tight mb-12">
+        Prijavi se na svoj nalog
       </div>
+      <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+        <InputElement
+          label="E-mail adresa"
+          type={InputType.Email}
+          error={errors}
+          {...register('email', { required: true })}
+        />
+        <InputElement
+          label="Upišite šifru"
+          type={InputType.Pass}
+          error={errors}
+          {...register('password', { required: true })}
+        />
+        <div className="w-full mt-12">
+          <Button type="submit">Prijavi se na nalog</Button>
+        </div>
+      </form>
     </div>
   );
 }
 
-export default LoginPage;
+export default Login;
