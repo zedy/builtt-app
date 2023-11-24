@@ -1,26 +1,27 @@
-/* eslint-disable import/no-extraneous-dependencies */
 // libs
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // components
-import Home from './modules/home/Home';
-import NotFound from './modules/error/404';
+import NotFound from '@/modules/error/404';
+import LoginPage from '@/modules/login/LoginPage';
 
-export function App() {
+function App() {
+  const Router = createBrowserRouter([
+    {
+      path: '/',
+      element: <LoginPage />,
+    },
+    {
+      path: '*',
+      element: <NotFound />,
+    },
+  ]);
+
   return (
     <div className="App">
-      <Routes>
-        <Route element={<Home />} path="/" />
-        <Route element={<NotFound />} path="*" />
-      </Routes>
+      <RouterProvider router={Router} />
     </div>
   );
 }
 
-export function WrappedApp() {
-  return (
-    <HashRouter>
-      <App />
-    </HashRouter>
-  );
-}
+export default App;
