@@ -29,7 +29,7 @@ function Header() {
         <button onClick={goToCheckout} type="button" className="relative">
           <Cart w={23} h={23} c="#000" />
           <div
-            className={`${getCartCounterLeft()} absolute top-2 text-center text-black text-xs font-normal font-['Arial'] leading-3`}
+            className={`${getCartCounterLeft()} absolute top-[9px] text-center text-black text-xs font-normal font-['Arial'] leading-3`}
           >
             0
           </div>

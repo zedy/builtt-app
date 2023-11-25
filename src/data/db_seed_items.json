@@ -1,242 +1,398 @@
 [
   {
     "id": 1,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    "price": 109.95,
-    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    "category": "men's clothing",
-    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "title": {
+      "sr": "Bar sa Brusnicom",
+      "en": "Bar with Cranbarries"
+    },
+    "price": 140,
+    "description": {
+      "sr": "Hranljiva snack bar bogata proteinima i osvežavajućim brusnicama, savršena za energetske potrebe.",
+      "en": "A nutritious snack bar packed with protein and tangy cranberries, perfect for energy boosts."
+    },
+    "category": "bar",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Bar_Brusnica_00_hoverx2.jpg?alt=media&token=bf341a48-3133-4549-bc3c-e35d180106c1",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Bar_Brusnica_01_30g.jpg?alt=media&token=f3db9874-395d-4035-9a51-dd802f37bded"
+    },
+    "stock": 122,
     "rating": {
-      "rate": 3.9,
-      "count": 120
+      "rate": 4.4,
+      "count": 123
     }
-  },
+  }, 
   {
     "id": 2,
-    "title": "Mens Casual Premium Slim Fit T-Shirts ",
-    "price": 22.3,
-    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-    "category": "men's clothing",
-    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+    "title": {
+      "sr": "Bar sa Semenom Bundeve",
+      "en": "Bar with Pumpikn Seeds"
+    },
+    "price": 144,
+    "description": {
+      "sr": "Zdrava i hrskava snack bar obogaćena semenkama bundeve, idealna za užinu u pokretu.",
+      "en": "A healthy and crunchy snack bar enriched with pumpkin seeds, ideal for on-the-go nourishment."
+    },
+    "category": "bar",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Bar_Bundeva_seme_00_hover.jpg?alt=media&token=7dd83b4a-4441-4f2a-92ae-bbc49c91cb4c",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Bar_Bundeva_Seme_01_30g.jpg?alt=media&token=cb9b839a-303c-4211-ad04-3d8f6d7341cc"
+    },
+    "stock": 33,
     "rating": {
-      "rate": 4.1,
-      "count": 259
+      "rate": 4.3,
+      "count": 154
     }
-  },
+  }, 
   {
     "id": 3,
-    "title": "Mens Cotton Jacket",
-    "price": 55.99,
-    "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-    "category": "men's clothing",
-    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+    "title": {
+      "sr": "Bar sa Lešnik Puterom",
+      "en": "Bar with Hazzlenut Butter"
+    },
+    "price": 150,
+    "description": {
+      "sr": "Ukusna i kremasta snack bar sa bogatim ukusom putera od lešnika, za zadovoljavajući užitak.",
+      "en": "A deliciously creamy and nutty snack bar, featuring rich hazelnut butter for a satisfying treat."
+    },
+    "category": "bar",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Bar_Suncokret_Lan_00_hoverx2.jpg?alt=media&token=ffbb7874-64cd-4036-a7c9-053ad31ab260",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Bar_Lesnik_Puter_01_30g.jpg?alt=media&token=ce2079d6-5529-460f-92c5-cd4bdd02514a"
+    },
+    "stock": 1,
     "rating": {
-      "rate": 4.7,
-      "count": 500
+      "rate": 5.0,
+      "count": 33
     }
-  },
+  }, 
   {
     "id": 4,
-    "title": "Mens Casual Slim Fit",
-    "price": 15.99,
-    "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-    "category": "men's clothing",
-    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+    "title": {
+      "sr": "Bar sa Suncokretom i Lanom",
+      "en": "Bar with Sunflower seed and Flexseeds"
+    },
+    "price": 133,
+    "description": {
+      "sr": "Snack bar bogat vlaknima sa semenkama suncokreta i lana, odlična za digestivno zdravlje.",
+      "en": "A fiber-rich snack bar combining sunflower seeds and flaxseeds, great for digestive health."
+    },
+    "category": "bar",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Bar_Suncokret_Lan_00_hoverx2.jpg?alt=media&token=ffbb7874-64cd-4036-a7c9-053ad31ab260",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Bar_Suncokret_Lan_01_30g.jpg?alt=media&token=2e4b1d2a-9412-49b2-bfce-2878e8d443a7"
+    },
+    "stock": 43,
     "rating": {
-      "rate": 2.1,
-      "count": 1
+      "rate": 3.4,
+      "count": 76
     }
-  },
+  },  
   {
     "id": 5,
-    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-    "price": 695,
-    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-    "category": "jewelery",
-    "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+    "title": {
+      "sr": "Protein od Seme Bundeve",
+      "en": "Pumpkin Seed Protein"
+    },
+    "price": 540,
+    "description": {
+      "sr": "Biljni proteinski prah napravljen od semenki bundeve, odličan za izgradnju mišića i veganske dijete.",
+      "en": "A plant-based protein powder made from pumpkin seeds, great for muscle building and vegan diets."
+    },
+    "category": "protein",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Protein_Bundeva_00_hoverx2-1.jpg?alt=media&token=616b49f2-eedf-4fc0-942f-7987e02d4e27",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Protein_Bundeva_01_200g.jpg?alt=media&token=2f6ea0b0-d2ed-4035-8cbf-4e6376536c02"
+    },
+    "stock": 0,
     "rating": {
-      "rate": 4.6,
-      "count": 400
+      "rate": 4.5,
+      "count": 23
     }
   },
   {
     "id": 6,
-    "title": "Solid Gold Petite Micropave ",
-    "price": 168,
-    "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-    "category": "jewelery",
-    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "title": {
+      "sr": "Protein of Kikirikija",
+      "en": "Peanut Protein"
+    },
+    "price": 660,
+    "description": {
+      "sr": "Proteinski prah sa ukusom kikirikija, savršen za dodavanje orašastog ukusa šejkovima i jelima.",
+      "en": "A high-protein, peanut-flavored powder, perfect for adding a nutty boost to shakes and meals."
+    },
+    "category": "protein",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Protein_Kikiriki_00_hoverx2.jpg?alt=media&token=fc3a4100-f5df-41bc-b23e-160b8e1d080f",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Protein_Kikiriki_01_200g.jpg?alt=media&token=f8090952-1ccc-4e12-8e77-06f63255fdc3"
+    },
+    "stock": 471,
     "rating": {
-      "rate": 3.9,
-      "count": 70
+      "rate": 4.1,
+      "count": 288
     }
   },
   {
     "id": 7,
-    "title": "White Gold Plated Princess",
-    "price": 9.99,
-    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-    "category": "jewelery",
-    "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+    "title": {
+      "sr": "Protein od Kokosa",
+      "en": "Coconut Protein"
+    },
+    "price": 698,
+    "description": {
+      "sr": "Proteinski prah sa ukusom tropskog kokosa, idealan za smoothie i pečenje.",
+      "en": "A tropical-inspired protein powder infused with the flavor of coconuts, ideal for smoothies and baking."
+    },
+    "category": "protein",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Protein_Kokos_00_hoverx2.jpg?alt=media&token=19d787fb-9770-4e3d-8c1d-28cf59dd1832",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Protein_Kokos_01_200g-1.jpg?alt=media&token=9796d874-6810-4928-974b-5bc58031cc8c"
+    },
+    "stock": 121,
     "rating": {
-      "rate": 3,
-      "count": 400
+      "rate": 3.6,
+      "count": 122
     }
   },
   {
     "id": 8,
-    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-    "price": 10.99,
-    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-    "category": "jewelery",
-    "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+    "title": {
+      "sr": "Protein of Lana",
+      "en": "Flaxseed Protein"
+    },
+    "price": 662,
+    "description": {
+      "sr": "Nutritivni proteinski prah od lana, bogat omega-3 masnim kiselinama i vlaknima.",
+      "en": "A nutritious protein powder made from flaxseeds, rich in omega-3 fatty acids and fiber."
+    },
+    "category": "protein",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Protein_Lan_00_hoverx2.jpg?alt=media&token=f47349ff-04e8-4f5c-8fce-49144ed0e829",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Protein_Lan_01_200g.jpg?alt=media&token=7d40ebcb-ef46-4f87-b13d-fec4deb49d4c"
+    },
+    "stock": 33,
     "rating": {
-      "rate": 1.9,
-      "count": 100
+      "rate": 3.9,
+      "count": 211
     }
   },
   {
     "id": 9,
-    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-    "price": 64,
-    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+    "title": {
+      "sr": "Puter od Semena Bundeve",
+      "en": "Pumpkin Seed Butter"
+    },
+    "price": 455,
+    "description": {
+      "sr": "Gladak, orašasti puter napravljen od mlevenih semenki bundeve, odličan za namaze i umake.",
+      "en": "A smooth, nutty butter alternative made from ground pumpkin seeds, great for spreads and dips."
+    },
+    "category": "butter",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_puter_Bundeva_00_hoverx2.jpg?alt=media&token=e4b16577-ba33-4603-ac13-3f4bc20194b0",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_puter_Bundeva_01_170g.jpg?alt=media&token=8d7ef9fb-6f47-4c98-8551-f67c5a54f70f"
+    },
+    "stock": 45,
     "rating": {
-      "rate": 3.3,
-      "count": 203
+      "rate": 4.5,
+      "count": 31
     }
   },
   {
     "id": 10,
-    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-    "price": 109,
-    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+    "title": {
+      "sr": "Puter od Indijskog Oraha",
+      "en": "Cashew Butter"
+    },
+    "price": 654,
+    "description": {
+      "sr": "Kremasti i bogati puter napravljen od kašua, savršen za tost, smoothie ili kao sastojak u pečenju.",
+      "en": "A creamy and rich butter made from cashews, perfect for toast, smoothies, or as a baking ingredient."
+    },
+    "category": "butter",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Puter_Idijski_Orah_00_hoverx2.jpg?alt=media&token=3df662fb-5ae8-4515-be67-39063147b180",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_puter_Idijski_orah_01_170g.jpg?alt=media&token=b8e8b8ab-d75d-45e4-be0e-565dfb684832"
+    },
+    "stock": 333,
     "rating": {
-      "rate": 2.9,
-      "count": 470
+      "rate": 4.8,
+      "count": 143
     }
   },
   {
     "id": 11,
-    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-    "price": 109,
-    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+    "title": {
+      "sr": "Kikiriki Puter",
+      "en": "Peanut Butter"
+    },
+    "price": 545,
+    "description": {
+      "sr": "Klasični, glatki namaz napravljen od mlevenog kikirikija, univerzalan za sendviče, recepte ili grickalice.",
+      "en": " A classic, smooth spread made from ground peanuts, versatile for sandwiches, recipes, or snacks."
+    },
+    "category": "butter",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Puter_Kikiriki_00_hoverx2.jpg?alt=media&token=c9394506-a729-4e04-9430-74430efb069d",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_puter_Kikiriki_01_170g.jpg?alt=media&token=d9c448a1-290e-46d7-8201-bdef3c96d0d9"
+    },
+    "stock": 233,
     "rating": {
-      "rate": 4.8,
-      "count": 319
+      "rate": 4.7,
+      "count": 321
     }
   },
   {
     "id": 12,
-    "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-    "price": 114,
-    "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+    "title": {
+      "sr": "Kikiriki Puter Crunchy",
+      "en": "Crunchy Peanut Butter"
+    },
+    "price": 560,
+    "description": {
+      "sr": "Hrskava verzija tradicionalnog kikiriki putera, sa dodatnom teksturom od komadića kikirikija.",
+      "en": "A crunchy version of traditional peanut butter, with extra texture from peanut pieces."
+    },
+    "category": "butter",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Puter_Kikiriki_Crunchy_00_hoverx2.jpg?alt=media&token=f2404f14-29a5-4c4a-ba0e-1e2950d099c7",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_puter_Kikiriki_Crunchy_01_170g.jpg?alt=media&token=79b654e9-515b-4765-8673-55f445f603a2"
+    },
+    "stock": 211,
     "rating": {
-      "rate": 4.8,
-      "count": 400
+      "rate": 3.9,
+      "count": 122
     }
   },
   {
     "id": 13,
-    "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-    "price": 599,
-    "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+    "title": {
+      "sr": "Kokosov Puter",
+      "en": "Coconut Butter"
+    },
+    "price": 765,
+    "description": {
+      "sr": " Bogati i kremasti puter napravljen od pirea od kokosa, odličan za veganske recepte i namaze.",
+      "en": " A rich and creamy butter made from pureed coconut flesh, great for vegan recipes and spreads."
+    },
+    "category": "butter",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Puter_Kokos_00_hoverx2.jpg?alt=media&token=24f47da5-4b75-4f09-9cf6-1dcbb12448e1",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_puter_Kokos_01_170g-1.jpg?alt=media&token=0301dd5b-7d18-49b0-89e0-2520828d3513"
+    },
+    "stock": 12,
     "rating": {
-      "rate": 2.9,
-      "count": 250
+      "rate": 4.8,
+      "count": 126
     }
   },
   {
     "id": 14,
-    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-    "price": 999.99,
-    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+    "title": {
+      "sr": "Orgasnko Sirće od Borovnice",
+      "en": "Organic Blueberry Vinegar"
+    },
+    "price": 1023,
+    "description": {
+      "sr": "Ukusni i voćni ocat napravljen od organskih borovnica, savršen za prelive i marinade.",
+      "en": "A tangy and fruity vinegar made from organic blueberries, perfect for dressings and marinades."
+    },
+    "category": "vinegar",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Sirce_Borovnica_Organic_00_hoverx2.jpg?alt=media&token=c563af0c-872a-4cbe-9d10-11194236eaf4",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Sirce_Borovnica_Organic_01_250ml.jpg?alt=media&token=b0a50c8a-32c6-4b4d-842b-961fe0075d05"
+    },
+    "stock": 23,
     "rating": {
-      "rate": 2.2,
-      "count": 0
+      "rate": 4.6,
+      "count": 67
     }
   },
   {
     "id": 15,
-    "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
-    "price": 56.99,
-    "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
-    "category": "women's clothing",
-    "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+    "title": {
+      "sr": "Organsko Sirće od Maline",
+      "en": "Organic Raspberry Vinegar"
+    },
+    "price": 999,
+    "description": {
+      "sr": "Živahni, organski ocat sa ukusom malina, idealan za dodavanje osvežavajuće note jelima.",
+      "en": "A vibrant, organic vinegar infused with raspberries, ideal for adding a zesty twist to dishes."
+    },
+    "category": "vinegar",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Sirce_Malina_Organic_00_hoverx2.jpg?alt=media&token=c529bede-c9c4-4f1d-ad1f-fdf99f7b3e56",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Sirce_Malina_Organic_01_250ml.jpg?alt=media&token=552cfc9c-344d-4984-bba8-95724447c734"
+    },
+    "stock": 3,
     "rating": {
-      "rate": 2.6,
-      "count": 235
+      "rate": 5.0,
+      "count": 12
     }
   },
   {
     "id": 16,
-    "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
-    "price": 29.95,
-    "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
-    "category": "women's clothing",
-    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+    "title": {
+      "sr": "Bundevino Ulje",
+      "en": "Pumpkin Seed Oil"
+    },
+    "price": 788,
+    "description": {
+      "sr": "Svestrano i zdravo ulje dobijeno iz kokosa, koristi se u kuvanju, pečenju, pa čak i kao kozmetički proizvod.",
+      "en": "A versatile and healthy oil extracted from pumpkin seeds, used in cooking, baking, and even as a beauty product."
+    },
+    "category": "oil",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Ulje_Bundeva_00_hoverx2.jpg?alt=media&token=c5b17210-35e4-4681-9bbb-49b4337d5320",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Ulje_Bundeva_01_250ml.jpg?alt=media&token=b157052a-5828-405c-83e2-801842fe78ef"
+    },
+    "stock": 0,
     "rating": {
-      "rate": 2.9,
-      "count": 340
+      "rate": 4.1,
+      "count": 344
     }
   },
   {
     "id": 17,
-    "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-    "price": 39.99,
-    "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-    "category": "women's clothing",
-    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+    "title": {
+      "sr": "Ulje od Kikirikija",
+      "en": "Peanut Oil"
+    },
+    "price": 832,
+    "description": {
+      "sr": "Svestrano i zdravo ulje dobijeno iz kokosa, koristi se u kuvanju, pečenju, pa čak i kao kozmetički proizvod.",
+      "en": "A versatile and healthy oil extracted from coconuts, used in cooking, baking, and even as a beauty product."
+    },
+    "category": "oil",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Ulje_Kikiriki_00_hoverx2.jpg?alt=media&token=acb88efa-5510-4448-8e08-00ce07a2071e",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Ulje_Kikiriki_01_250ml.jpg?alt=media&token=d9edf984-a35a-4234-9a24-719faf419f71"
+    },
+    "stock": 89,
     "rating": {
-      "rate": 3.8,
-      "count": 679
+      "rate": 3.1,
+      "count": 245
     }
   },
   {
     "id": 18,
-    "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
-    "price": 9.85,
-    "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
-    "category": "women's clothing",
-    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+    "title": {
+      "sr": "Kokosovo Ulje",
+      "en": "Coconut Oil"
+    },
+    "price": 1112,
+    "description": {
+      "sr": "Ulje sa punim ukusom i visokom tačkom dimljenja, idealno za prženje i dodavanje orašastog ukusa jelima.",
+      "en": " A flavorful oil with a high smoke point, ideal for frying and adding a nutty taste to dishes."
+    },
+    "category": "oil",
+    "image": {
+      "hover": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Ulje_Kokos_00_hoverx2.jpg?alt=media&token=3f08d9de-1b3a-40db-8689-288b79550fd1",
+      "default": "https://firebasestorage.googleapis.com/v0/b/builtt-app.appspot.com/o/Granum_Ulje_Kokos_01_170g-1.jpg?alt=media&token=e0f2acdf-7300-4de2-a964-698e62130240"
+    },
+    "stock": 43,
     "rating": {
-      "rate": 4.7,
-      "count": 130
+      "rate": 4.1,
+      "count": 32
     }
-  },
-  {
-    "id": 19,
-    "title": "Opna Women's Short Sleeve Moisture",
-    "price": 7.95,
-    "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
-    "category": "women's clothing",
-    "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-    "rating": {
-      "rate": 4.5,
-      "count": 146
-    }
-  },
-  {
-    "id": 20,
-    "title": "DANVOUY Womens T Shirt Casual Cotton Short",
-    "price": 12.99,
-    "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
-    "category": "women's clothing",
-    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
-    "rating": {
-      "rate": 3.6,
-      "count": 145
-    }
-  }
+  }  
 ]

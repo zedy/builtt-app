@@ -19,6 +19,8 @@ import {
   setDoc,
   collection,
   writeBatch,
+  query,
+  getDocs,
 } from 'firebase/firestore';
 import { get } from 'lodash';
 
@@ -104,33 +106,55 @@ export const signOutUser = async () => signOut(auth);
 export const onAuthStateChangedListener = (callback: () => void) =>
   onAuthStateChanged(auth, callback);
 
-type SeedObject = {
+export type ProductObject = {
   id: number;
-  title: string;
+  title: {
+    sr: string;
+    en: string;
+  };
   price: number;
-  description: string;
+  description: {
+    sr: string;
+    en: string;
+  };
   category: string;
-  image: string;
+  image: {
+    hover: string;
+    default: string;
+  };
+  stock: number;
   rating: {
     rate: number;
     count: number;
   };
 };
 
-type SeedObjects = [SeedObject];
+type SeedObjects = [ProductObject];
 
 export const batchDBSeeding = async (
   collectionKey: string,
   objectsToAdd: SeedObjects
 ) => {
-  const collectionRef = collection(db, collectionKey);
-  const batch = writeBatch(db);
+  try {
+    const collectionRef = collection(db, collectionKey);
+    const batch = writeBatch(db);
 
-  objectsToAdd.forEach((object: SeedObject) => {
-    const docRef = doc(collectionRef);
-    batch.set(docRef, object);
-  });
+    objectsToAdd.forEach((object: ProductObject) => {
+      const docRef = doc(collectionRef);
+      batch.set(docRef, object);
+    });
 
-  await batch.commit();
-  console.log('done');
+    await batch.commit();
+    console.log('done');
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getProducts = async () => {
+  const collectionRef = collection(db, 'products');
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
 };
