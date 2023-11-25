@@ -3,13 +3,18 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // components
 import NotFound from '@/components/error/404';
-import Home from '@/components/home/Home';
+import HomePage from '@/components/home/HomePage';
+import ProductsPage from '@/components/products/ProductsPage.tsx';
 
 function App() {
   const Router = createBrowserRouter([
     {
       path: '/',
-      element: <Home />,
+      element: <HomePage />,
+    },
+    {
+      path: '/products',
+      element: <ProductsPage />,
     },
     {
       path: '*',

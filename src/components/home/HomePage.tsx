@@ -7,7 +7,7 @@ import Signup from '@/components/signup/Signup';
 import LogoComponent from '@/components/logo/Logo';
 import { LOGO_SIZE_LG, LOGO_SIZE_MD } from '@/utils/consts';
 
-function Home() {
+function HomePage() {
   const { width } = useWindowSize();
 
   return (
@@ -25,4 +25,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;
