@@ -57,7 +57,10 @@ function InputElement(
   );
 }
 
-export default forwardRef<
-  HTMLInputElement,
-  Props & ReturnType<UseFormRegister<FormValues>>
->(InputElement);
+// this was fucking up my TS server in VSC, didn't have time to investigate
+// export default forwardRef<
+//   HTMLInputElement,
+//   Props & ReturnType<UseFormRegister<FormValues>>
+// >(InputElement);
+
+export default forwardRef(InputElement);

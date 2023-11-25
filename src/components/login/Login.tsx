@@ -6,6 +6,7 @@ import * as yup from 'yup';
 // components
 import InputElement, { InputType } from '@/components/elements/Input.component';
 import Button from '@/components/elements/Button.component';
+import { signInAuthUserWithEmailAndPassword } from '@/utils/firebase/firebase.utils';
 
 const schemaValidation = yup
   .object({
@@ -28,9 +29,10 @@ function Login() {
     resolver: yupResolver(schemaValidation),
   });
 
-  function onSubmit(data: FormData) {
-    console.log(data);
-  }
+  const onSubmit = async (data: FormData) => {
+    const { email, password } = data;
+    await signInAuthUserWithEmailAndPassword(email, password);
+  };
 
   return (
     <div className="w-full">

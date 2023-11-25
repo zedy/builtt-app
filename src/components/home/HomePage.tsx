@@ -6,6 +6,7 @@ import Login from '@/components/login/Login';
 import Signup from '@/components/signup/Signup';
 import LogoComponent from '@/components/logo/Logo';
 import { LOGO_SIZE_LG, LOGO_SIZE_MD } from '@/utils/consts';
+import { ModalContextProvider } from '@/context/modalContext';
 
 function HomePage() {
   const { width } = useWindowSize();
@@ -17,8 +18,10 @@ function HomePage() {
       </div>
       <div className="w-full sm:w-1/2 flex flex-col items-center">
         <div className="px-4 relative bg-white md:px-0 w-full max-w-[420px] sm:min-w-[420px]">
-          <Login />
-          <Signup />
+          <ModalContextProvider>
+            <Login />
+            <Signup />
+          </ModalContextProvider>
         </div>
       </div>
     </div>
