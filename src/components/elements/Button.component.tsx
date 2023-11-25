@@ -4,6 +4,7 @@ import { memo } from 'react';
 export enum ButtonTypes {
   Primary = 'primary',
   Outline = 'outline',
+  Google = 'google',
 }
 
 type Props = {
@@ -30,6 +31,8 @@ function Button({
     classes = `${DEFAULT_CLASS} bg-transparent border border-gray-900 text-slate-700 hover:bg-slate-300`;
   } else if (variant === 'primary') {
     classes = `${DEFAULT_CLASS} text-white bg-gray-900 hover:bg-gray-700`;
+  } else if (variant === 'google') {
+    classes = `${DEFAULT_CLASS} bg-neutral-200 border border-gray-400 hover:border-gray-800 flex justify-center items-center mt-2`;
   }
 
   return (
