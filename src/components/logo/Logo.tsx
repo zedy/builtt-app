@@ -29,7 +29,7 @@ function LogoComponent({ size }: Props) {
     <div className="flex flex-col items-end">
       <Logo {...size} c={LOGO_PRIMARY_COLOR} />
       <span
-        className={`${getTextSize()}text-gray-500 font-medium font-['PP Neue Montreal'] leading-3 tracking-tight`}
+        className={`${getTextSize()} text-gray-500 font-medium font-['PP Neue Montreal'] leading-3 tracking-tight`}
       >
         {LOGO_TEXT}
       </span>
