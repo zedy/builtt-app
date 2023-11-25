@@ -1,6 +1,7 @@
 // components
 import { Modal, useModal } from '@/hooks/useModal';
 import Button, { ButtonTypes } from '@/components/elements/Button.component';
+import SignUpForm from './SignUpForm';
 
 function Signup() {
   const { closeModal, openModal, modalProps } = useModal();
@@ -8,7 +9,9 @@ function Signup() {
   return (
     <>
       <Modal {...modalProps} title="Kreiranje naloga">
-        <div className="m-auto">account form goes here</div>
+        <div className="m-auto">
+          <SignUpForm />
+        </div>
       </Modal>
       <div className="mt-5 w-full">
         <div className="flex justify-between items-center mb-5">

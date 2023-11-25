@@ -54,7 +54,7 @@ export function Modal({
         onKeyUp={closeOnBgClick ? onKeyupModalCloseCallback : undefined}
         className="cursor-pointer bg-slate-700 opacity-50 absolute w-full h-full"
       />
-      <div className="bg-slate-100 rounded-xl w-[480px] min-h-[150px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+      <div className="bg-slate-100 rounded-xl w-[calc(100%-20px)] sm:w-[480px] min-h-[150px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
         <div className="relative h-full z-50">
           {isLoading ? (
             <div className="absolute h-full w-full bg-slate-800 opacity-75 z-40">
