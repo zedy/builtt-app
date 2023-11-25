@@ -23,7 +23,7 @@ function Header() {
   };
 
   return (
-    <header className="w-full h-16 relative bg-zinc-100 flex justify-between items-center px-[70px]">
+    <header className="w-full h-16 relative bg-zinc-100 flex justify-between items-center px-5 sm:px-[70px]">
       <LogoComponent size={LOGO_SIZE_SM} />
       <div className="flex">
         <button onClick={goToCheckout} type="button" className="relative">

@@ -12,7 +12,14 @@ import {
   UserCredential,
   User,
 } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  writeBatch,
+} from 'firebase/firestore';
 import { get } from 'lodash';
 
 // TODO: move to ENV
@@ -96,3 +103,34 @@ export const signOutUser = async () => signOut(auth);
 
 export const onAuthStateChangedListener = (callback: () => void) =>
   onAuthStateChanged(auth, callback);
+
+type SeedObject = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+};
+
+type SeedObjects = [SeedObject];
+
+export const batchDBSeeding = async (
+  collectionKey: string,
+  objectsToAdd: SeedObjects
+) => {
+  const collectionRef = collection(db, collectionKey);
+  const batch = writeBatch(db);
+
+  objectsToAdd.forEach((object: SeedObject) => {
+    const docRef = doc(collectionRef);
+    batch.set(docRef, object);
+  });
+
+  await batch.commit();
+  console.log('done');
+};
