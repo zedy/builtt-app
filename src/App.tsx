@@ -2,8 +2,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // components
-import NotFound from '@/modules/error/404';
-import Home from '@/modules/home/Home';
+import NotFound from '@/components/error/404';
+import Home from '@/components/home/Home';
 
 function App() {
   const Router = createBrowserRouter([

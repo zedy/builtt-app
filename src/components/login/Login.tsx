@@ -4,8 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 // components
-import InputElement, { InputType } from '@/modules/elements/Input.component';
-import Button from '@/modules/elements/Button.component';
+import InputElement, { InputType } from '@/components/elements/Input.component';
+import Button from '@/components/elements/Button.component';
 
 const schemaValidation = yup
   .object({

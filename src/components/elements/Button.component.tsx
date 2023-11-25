@@ -14,6 +14,8 @@ type Props = {
   type?: 'button' | 'submit' | 'reset' | undefined;
 };
 
+const DEFAULT_CLASS = `py-3 w-full rounded-full transition-all font-normal font-['Arial'] leading-none text-lg`;
+
 function Button({
   children,
   onClick,
@@ -22,16 +24,17 @@ function Button({
   type = 'button',
   ...props
 }: Props) {
-  let classname = `text-white py-3 w-full rounded-full bg-gray-900 text-lg
-   font-normal font-['Arial'] leading-none transition-all hover:bg-gray-700`;
+  let classes;
 
   if (variant === 'outline') {
-    classname = `${classname} bg-transparent border border-gray-900 text-slate-700 hover:bg-slate-300`;
+    classes = `${DEFAULT_CLASS} bg-transparent border border-gray-900 text-slate-700 hover:bg-slate-300`;
+  } else if (variant === 'primary') {
+    classes = `${DEFAULT_CLASS} text-white bg-gray-900 hover:bg-gray-700`;
   }
 
   return (
     <button
-      className={classname}
+      className={classes}
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       type={type}

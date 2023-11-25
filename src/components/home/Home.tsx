@@ -2,9 +2,9 @@
 import { useWindowSize } from 'usehooks-ts';
 
 // components
-import Login from '@/modules/login/LoginPage';
-import Signup from '@/modules/signup/Signup';
-import LogoComponent from '@/modules/logo/Logo';
+import Login from '@/components/login/Login';
+import Signup from '@/components/signup/Signup';
+import LogoComponent from '@/components/logo/Logo';
 import { LOGO_SIZE_LG, LOGO_SIZE_MD } from '@/utils/consts';
 
 function Home() {
