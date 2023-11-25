@@ -1,6 +1,10 @@
 // libs
 import { useEffect } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  redirect,
+} from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
 // components
@@ -12,6 +16,8 @@ import {
   onAuthStateChangedListener,
 } from './utils/firebase/firebase.utils';
 import { useStore } from './store';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import PublicRoute from './components/auth/PublicRoute';
 
 function App() {
   const loginUser = useStore((store) => store.loginUser);
@@ -23,6 +29,7 @@ function App() {
       }
 
       loginUser(user);
+      return redirect('/products');
     });
 
     return unsubscribe;
@@ -31,12 +38,20 @@ function App() {
 
   const Router = createBrowserRouter([
     {
-      path: '/',
-      element: <HomePage />,
+      path: '/login',
+      element: (
+        <PublicRoute>
+          <HomePage />
+        </PublicRoute>
+      ),
     },
     {
-      path: '/products',
-      element: <ProductsPage />,
+      path: '/',
+      element: (
+        <ProtectedRoute>
+          <ProductsPage />
+        </ProtectedRoute>
+      ),
     },
     {
       path: '*',

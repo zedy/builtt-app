@@ -13,6 +13,7 @@ import {
   User,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { get } from 'lodash';
 
 // TODO: move to ENV
 const firebaseConfig = {
@@ -64,7 +65,7 @@ export const createUserDocumentFromAuth = async (
 
       sendEmailVerification(userAuth);
     } catch (error) {
-      console.error('error creating the user', error.message);
+      console.error('error creating the user', get(error, 'message'));
     }
   }
 
