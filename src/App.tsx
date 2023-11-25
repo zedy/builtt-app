@@ -18,6 +18,7 @@ import {
 import { useStore } from './store';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import PublicRoute from './components/auth/PublicRoute';
+import Layout from './components/layout/Layout';
 
 function App() {
   const loginUser = useStore((store) => store.loginUser);
@@ -49,9 +50,15 @@ function App() {
       path: '/',
       element: (
         <ProtectedRoute>
-          <ProductsPage />
+          <Layout />
         </ProtectedRoute>
       ),
+      children: [
+        {
+          path: '/',
+          element: <ProductsPage />,
+        },
+      ],
     },
     {
       path: '*',
