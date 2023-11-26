@@ -23,27 +23,31 @@ function Header() {
   };
 
   return (
-    <header className="w-full h-16 relative bg-zinc-100 flex justify-between items-center px-5 sm:px-[70px]">
-      <div className="flex">
-        <LogoComponent size={LOGO_SIZE_SM} />
-        <LanguageSwitcher />
-      </div>
-      <div className="flex">
-        <Link to="/cart" className="relative">
-          <Cart w={23} h={23} c="#000" />
-          <div
-            className={`${getCartCounterLeft()} absolute top-[9px] text-center text-black text-xs font-normal font-['Arial'] leading-3`}
+    <header className="w-full h-16 relative bg-zinc-100 flex justify-center">
+      <div className="w-[calc(100%-5rem)] xl:w-[calc(100%-15rem)] flex justify-between items-center">
+        <div className="flex">
+          <Link to="/" className="relative">
+            <LogoComponent size={LOGO_SIZE_SM} />
+          </Link>
+          <LanguageSwitcher />
+        </div>
+        <div className="flex">
+          <Link to="/cart" className="relative">
+            <Cart w={23} h={23} c="#000" />
+            <div
+              className={`${getCartCounterLeft()} absolute top-[9px] text-center text-black text-xs font-normal font-['Arial'] leading-3`}
+            >
+              {cart.length}
+            </div>
+          </Link>
+          <button
+            onClick={goToProfile}
+            className="ml-5 cursor-pointer"
+            type="button"
           >
-            {cart.length}
-          </div>
-        </Link>
-        <button
-          onClick={goToProfile}
-          className="ml-5 cursor-pointer"
-          type="button"
-        >
-          <Profile w={24} h={24} />
-        </button>
+            <Profile w={24} h={24} />
+          </button>
+        </div>
       </div>
     </header>
   );

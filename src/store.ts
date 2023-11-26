@@ -3,16 +3,18 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { User } from 'firebase/auth';
 import { ProductObject } from './utils/firebase/firebase.utils';
+import { deepCopyObj } from './utils/helpers';
 
-type Order = {
+export type Order = {
   id: number;
   count: number;
+  price: number;
 };
 
 const storeObj = (set) => ({
   currentUser: null,
   currentLanguage: 'sr',
-  langaugesX: [
+  langauges: [
     {
       key: 'sr',
       label: 'srb',
@@ -22,7 +24,7 @@ const storeObj = (set) => ({
       label: 'eng',
     },
   ],
-  switchLanguageX: (language: string) =>
+  switchLanguage: (language: string) =>
     set(
       (store) => ({
         ...store,
@@ -65,6 +67,37 @@ const storeObj = (set) => ({
       (store) => ({
         ...store,
         cart: [...store.cart, order],
+      }),
+      false,
+      'cart updated'
+    ),
+  removeItemFromCart: (id: number) =>
+    set(
+      (store) => ({
+        ...store,
+        cart: [...store.cart.filter((item: Order) => item.id !== id)],
+      }),
+      false,
+      'cart updated'
+    ),
+  updateItemCount: (id: number, action: string) =>
+    set(
+      (store) => ({
+        ...store,
+        cart: [
+          ...store.cart.map((item: Order): Order => {
+            if (item.id === id) {
+              const copy: Order = deepCopyObj(item);
+
+              if (action === 'inc') copy.count += 1;
+              if (action === 'dec') copy.count -= 1;
+
+              return copy;
+            }
+
+            return item;
+          }),
+        ],
       }),
       false,
       'cart updated'

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 type Props = {
   children: JSX.Element;
-  id: number | string;
+  href: string;
 };
 
-function WithLink({ children, id }: Props) {
+function WithLink({ children, href }: Props) {
   return (
-    <Link className="relative" to={`/product/${id}`}>
+    <Link className="relative" to={href}>
       {children}
     </Link>
   );

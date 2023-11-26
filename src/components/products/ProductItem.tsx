@@ -10,6 +10,7 @@ import { ProductObject } from '@/utils/firebase/firebase.utils';
 import ProductImage from './ProductImage';
 import WithLink from '@/components/elements/withLink';
 import { Cart, Dash, Plus } from '@/utils/icons';
+import { TRANSLATIONS } from '@/utils/consts';
 
 // TODO
 /**
@@ -24,11 +25,13 @@ function ProductItem(props: ProductObject) {
   const [counter, setCounter] = useState<number>(1);
   const [hover, setHover] = useState<boolean>(false);
   const { title, image, price, id, stock } = props;
+  const module = get(TRANSLATIONS, 'global');
 
   const addToCart = () => {
     setCart({
       id,
       count: counter,
+      price,
     });
   };
 
@@ -43,7 +46,7 @@ function ProductItem(props: ProductObject) {
   const counterIncrease = () => {
     if (counter === stock) {
       toast.dismiss();
-      toast.error('Cannot order more than current stock');
+      toast.error(get(module.maxStock, lang));
       return;
     }
 
@@ -60,7 +63,7 @@ function ProductItem(props: ProductObject) {
       }}
       className="product-item w-full"
     >
-      <WithLink id={id}>
+      <WithLink href={`/product/${id}`}>
         <ProductImage altText={get(title, lang)} image={image} hover={hover} />
       </WithLink>
       <div className="product-content relative z-50">
@@ -100,7 +103,7 @@ function ProductItem(props: ProductObject) {
           </div>
         </div>
         <div className="product-info bg-white">
-          <WithLink id={id}>
+          <WithLink href={`/product/${id}`}>
             <div className="w-full text-gray-900 text-lg font-bold font-['Arial'] leading-normal mt-3">
               {get(title, lang)}
             </div>

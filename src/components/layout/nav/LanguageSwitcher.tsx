@@ -3,9 +3,9 @@ import React from 'react';
 import { useStore } from '@/store';
 
 function LanguageSwitcher() {
-  const languagesList = useStore((store) => store.langaugesX);
+  const languagesList = useStore((store) => store.langauges);
   const currentLanguage = useStore((store) => store.currentLanguage);
-  const switchLanguage = useStore((store) => store.switchLanguageX);
+  const switchLanguage = useStore((store) => store.switchLanguage);
 
   return (
     <div className="flex ml-6 items-center">
