@@ -11,6 +11,26 @@ type Order = {
 
 const storeObj = (set) => ({
   currentUser: null,
+  currentLanguage: 'sr',
+  langaugesX: [
+    {
+      key: 'sr',
+      label: 'srb',
+    },
+    {
+      key: 'en',
+      label: 'eng',
+    },
+  ],
+  switchLanguageX: (language: string) =>
+    set(
+      (store) => ({
+        ...store,
+        currentLanguage: language,
+      }),
+      false,
+      'user logged in'
+    ),
   loginUser: (user: User) =>
     set(
       (store) => ({

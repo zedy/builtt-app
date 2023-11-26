@@ -15,3 +15,24 @@ export const LOGO_SIZE_LG = {
   h: 150,
   name: 'lg',
 };
+
+// If this was a prod website we'd use a more robust solution than this
+// storing the translation nodes in the DB.
+export const TRANSLATIONS = {
+  '/': {
+    count: {
+      sr: 'proizvoda',
+      en: 'products',
+    },
+    h1: {
+      sr: 'Svi Proizvodi',
+      en: 'All Products',
+    },
+  },
+  '/cart': {
+    h1: {
+      sr: 'Tvoja Korpa',
+      en: 'Your Cart',
+    },
+  },
+};

@@ -4,6 +4,7 @@ import { useWindowSize } from 'usehooks-ts';
 import toast from 'react-hot-toast';
 
 // components
+import { get } from 'lodash';
 import { useStore } from '@/store';
 import { ProductObject } from '@/utils/firebase/firebase.utils';
 import ProductImage from './ProductImage';
@@ -18,6 +19,7 @@ import { Cart, Dash, Plus } from '@/utils/icons';
  */
 function ProductItem(props: ProductObject) {
   const setCart = useStore((store) => store.setCart);
+  const lang = useStore((store) => store.currentLanguage);
   const { width } = useWindowSize();
   const [counter, setCounter] = useState<number>(1);
   const [hover, setHover] = useState<boolean>(false);
@@ -59,7 +61,7 @@ function ProductItem(props: ProductObject) {
       className="product-item w-full"
     >
       <WithLink id={id}>
-        <ProductImage altText={title.sr} image={image} hover={hover} />
+        <ProductImage altText={get(title, lang)} image={image} hover={hover} />
       </WithLink>
       <div className="product-content relative z-50">
         <div className="product-actions relative w-full">
@@ -100,7 +102,7 @@ function ProductItem(props: ProductObject) {
         <div className="product-info bg-white">
           <WithLink id={id}>
             <div className="w-full text-gray-900 text-lg font-bold font-['Arial'] leading-normal mt-3">
-              {title.sr}
+              {get(title, lang)}
             </div>
           </WithLink>
           <div className="w-20 h-8 justify-start items-start gap-1 inline-flex mt-3">
