@@ -5,6 +5,7 @@ import {
   RouterProvider,
   redirect,
 } from 'react-router-dom';
+import { User } from 'firebase/auth';
 import { Toaster } from 'react-hot-toast';
 
 // components
@@ -24,7 +25,7 @@ function App() {
   const loginUser = useStore((store) => store.loginUser);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
+    const unsubscribe = onAuthStateChangedListener((user: User) => {
       if (user) {
         createUserDocumentFromAuth(user);
       }

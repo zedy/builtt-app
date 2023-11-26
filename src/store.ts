@@ -2,6 +2,7 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { User } from 'firebase/auth';
+import { ProductObject } from './utils/firebase/firebase.utils';
 
 const storeObj = (set) => ({
   currentUser: null,
@@ -22,6 +23,16 @@ const storeObj = (set) => ({
       }),
       false,
       'user logged out'
+    ),
+  products: [],
+  setProducts: (products: ProductObject[]) =>
+    set(
+      (store) => ({
+        ...store,
+        products,
+      }),
+      false,
+      'products loaded'
     ),
 });
 

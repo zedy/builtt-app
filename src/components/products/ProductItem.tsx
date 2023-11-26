@@ -1,3 +1,6 @@
+// libs
+import { memo } from 'react';
+
 // components
 import { ProductObject } from '@/utils/firebase/firebase.utils';
 import ProductImage from './ProductImage';
@@ -28,4 +31,4 @@ function ProductItem(props: ProductObject) {
   );
 }
 
-export default ProductItem;
+export default memo(ProductItem);

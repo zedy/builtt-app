@@ -1,26 +1,31 @@
-import { sortBy } from 'lodash';
-import { useEffect, useState } from 'react';
+// libs
+import { useQuery } from '@tanstack/react-query';
+
+// components
 import { ProductObject, getProducts } from '@/utils/firebase/firebase.utils';
-import ProductItem from './ProductItem';
+import ProductsList from './ProductsList';
+import { useStore } from '@/store';
+import ProductError from './ProductError';
 
 function ProductsPage() {
-  const [products, setProducts] = useState([]);
+  const setProducts = useStore((store) => store.setProducts);
+  const products = useStore((store) => store.products);
 
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getProducts();
-      setProducts(sortBy(data, ['id']));
-    }
-    fetchData();
-  }, []);
+  const { isError, data } = useQuery({
+    queryFn: () => getProducts(),
+    queryKey: ['products'],
+    select: (items) => items.sort((a, b) => b.title.sr - a.title.sr),
+    suspense: true,
+    enabled: !(products && products.length > 0),
+  }) as { data: ProductObject[] | undefined; isError: boolean };
 
-  return (
-    <div className="w-full grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4 lg:gap-4">
-      {products.map((product: ProductObject) => (
-        <ProductItem key={product.id} {...product} />
-      ))}
-    </div>
-  );
+  if (isError) return <ProductError />;
+
+  if (data && data.length > 0) {
+    setProducts(data);
+  }
+
+  return <ProductsList products={products} />;
 }
 
 export default ProductsPage;
