@@ -17,7 +17,7 @@ function CartList() {
           id: item.id,
         });
 
-        return <CartItem key={item.id} {...product} cart={item} />;
+        return <CartItem key={item.id} product={product} cart={item} />;
       })}
     </div>
   );

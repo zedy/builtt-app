@@ -183,3 +183,26 @@ export function Dash({ w, h, c }: Props) {
     </svg>
   );
 }
+
+export function Expressionless({ w, h, c }: Props) {
+  return (
+    <svg
+      width={w}
+      height={h}
+      viewBox="0 0 21 21"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g fill="none" fillRule="evenodd" transform="translate(2 2)">
+        <circle cx="6" cy="6" fill={c || '#000000'} r="1" />
+        <circle cx="11" cy="6" fill={c || '#000000'} r="1" />
+        <path
+          d="m5.5 10.5h6"
+          stroke={c || '#000000'}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          transform="matrix(1 0 0 -1 0 21)"
+        />
+      </g>
+    </svg>
+  );
+}

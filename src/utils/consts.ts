@@ -44,6 +44,16 @@ export const TRANSLATIONS = {
       sr: 'Tvoja Korpa',
       en: 'Your Cart',
     },
+    empty: {
+      h2: {
+        sr: 'Vaša korpa je prazna!',
+        en: 'Your cart is empty!',
+      },
+      button: {
+        sr: 'Dodajte artikle?',
+        en: 'Add some products?',
+      },
+    },
     item: {
       button: {
         sr: 'Ukloni',

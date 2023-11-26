@@ -13,10 +13,14 @@ import { TRANSLATIONS } from '@/utils/consts';
 
 type Props = {
   cart: Order;
-} & ProductObject;
+  product: ProductObject;
+};
 
 function CartItem(props: Props) {
-  const { title, image, price, id, stock, cart } = props;
+  const {
+    product: { title, image, price, id, stock },
+    cart,
+  } = props;
   const removeItemFromCart = useStore((store) => store.removeItemFromCart);
   const updateItemCount = useStore((store) => store.updateItemCount);
   const [counter, setCounter] = useState<number>(cart.count);
