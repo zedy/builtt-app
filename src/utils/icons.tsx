@@ -122,3 +122,64 @@ export function Profile({ w, h, c }: Props) {
     </svg>
   );
 }
+
+export function Plus({ w, h, c }: Props) {
+  return (
+    <svg
+      width={w}
+      height={h}
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="Plus" clipPath="url(#clip0_1_581)">
+        <path
+          id="Vector 2 (Stroke)"
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M14.6304 7.98021H0V6.65018H14.6304V7.98021Z"
+          fill={c || '#000000'}
+        />
+        <path
+          id="Vector 3 (Stroke)"
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M6.65016 14.6304L6.65016 -5.81376e-08L7.98019 0L7.98019 14.6304L6.65016 14.6304Z"
+          fill={c || '#000000'}
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_581">
+          <rect width="14.6304" height="14.6304" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
+
+export function Dash({ w, h, c }: Props) {
+  return (
+    <svg
+      width={w}
+      height={h}
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="Plus" clipPath="url(#clip0_1_584)">
+        <path
+          id="Vector 2 (Stroke)"
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M14.6304 7.98021H0V6.65018H14.6304V7.98021Z"
+          fill={c || '#000000'}
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_584">
+          <rect width="14.6304" height="14.6304" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}

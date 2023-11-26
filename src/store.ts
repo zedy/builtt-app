@@ -4,6 +4,11 @@ import { devtools, persist } from 'zustand/middleware';
 import { User } from 'firebase/auth';
 import { ProductObject } from './utils/firebase/firebase.utils';
 
+type Order = {
+  id: number;
+  count: number;
+};
+
 const storeObj = (set) => ({
   currentUser: null,
   loginUser: (user: User) =>
@@ -33,6 +38,25 @@ const storeObj = (set) => ({
       }),
       false,
       'products loaded'
+    ),
+  cart: [],
+  setCart: (order: Order) =>
+    set(
+      (store) => ({
+        ...store,
+        cart: [...store.cart, order],
+      }),
+      false,
+      'cart updated'
+    ),
+  clearCart: () =>
+    set(
+      (store) => ({
+        ...store,
+        cart: [],
+      }),
+      false,
+      'cart cleared'
     ),
 });
 

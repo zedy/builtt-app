@@ -7,7 +7,11 @@ type Props = {
 };
 
 function WithLink({ children, id }: Props) {
-  return <Link to={`/product/${id}`}>{children}</Link>;
+  return (
+    <Link className="relative" to={`/product/${id}`}>
+      {children}
+    </Link>
+  );
 }
 
 export default WithLink;
