@@ -6,6 +6,6 @@ export function parsePriceWithDecimal(price: number) {
   return price;
 }
 
-export function deepCopyObj(obj: Record<string, unknown>) {
+export function deepCopyObj(obj: Record<string, unknown> | []) {
   return JSON.parse(JSON.stringify(obj));
 }

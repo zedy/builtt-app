@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // libs
+import { get } from 'lodash';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -7,6 +9,8 @@ import * as yup from 'yup';
 import InputElement, { InputType } from '@/components/elements/Input.component';
 import Button from '@/components/elements/Button.component';
 import { signInAuthUserWithEmailAndPassword } from '@/utils/firebase/firebase.utils';
+import { useStore } from '@/store';
+import { TRANSLATIONS } from '@/utils/consts';
 
 const schemaValidation = yup
   .object({
@@ -21,6 +25,9 @@ type FormData = {
 };
 
 function Login() {
+  const lang = useStore((store) => store.currentLanguage);
+  const localT = get(TRANSLATIONS, '/login');
+
   const {
     register,
     handleSubmit,
@@ -36,24 +43,26 @@ function Login() {
 
   return (
     <div className="w-full">
-      <div className="text-black text-xl font-bold font-['Arial'] leading-normal tracking-tight mb-12">
-        Prijavi se na svoj nalog
+      <div className="text-black text-xl font-bold leading-normal tracking-tight mb-12">
+        {get(localT.h1, lang)}
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+        {/* @ts-ignore | @see comment in input.component */}
         <InputElement
-          label="E-mail adresa"
+          label={get(localT.form.email, lang)}
           type={InputType.Email}
           error={errors}
           {...register('email', { required: true })}
         />
+        {/* @ts-ignore | @see comment in input.component */}
         <InputElement
-          label="Upišite šifru"
+          label={get(localT.form.pass, lang)}
           type={InputType.Pass}
           error={errors}
           {...register('password', { required: true })}
         />
         <div className="w-full mt-12">
-          <Button type="submit">Prijavi se na nalog</Button>
+          <Button type="submit">{get(localT.button.signin, lang)}</Button>
         </div>
       </form>
     </div>

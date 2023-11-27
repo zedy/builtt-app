@@ -5,10 +5,11 @@ import { createBrowserRouter } from 'react-router-dom';
 import NotFound from '@/components/error/404';
 import HomePage from '@/components/home/HomePage';
 import ProductsPage from '@/components/products/ProductsPage.tsx';
-import ProtectedRoute from '@/components/auth/ProtectedRoute';
+// import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import PublicRoute from '@/components/auth/PublicRoute';
 import Layout from '@/components/layout/Layout';
 import CartPage from '@/components/cart/CartPage';
+import ProductPage from '@/components/products/ProductPage';
 
 const BrowserRouter = createBrowserRouter([
   {
@@ -21,11 +22,7 @@ const BrowserRouter = createBrowserRouter([
   },
   {
     path: '/',
-    element: (
-      <ProtectedRoute>
-        <Layout />
-      </ProtectedRoute>
-    ),
+    element: <Layout />,
     children: [
       {
         path: '/',
@@ -35,11 +32,15 @@ const BrowserRouter = createBrowserRouter([
         path: '/cart',
         element: <CartPage />,
       },
+      {
+        path: 'product/:productId',
+        element: <ProductPage />,
+      },
+      {
+        path: '*',
+        element: <NotFound />,
+      },
     ],
-  },
-  {
-    path: '*',
-    element: <NotFound />,
   },
 ]);
 

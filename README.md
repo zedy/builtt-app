@@ -28,3 +28,6 @@ Running tests `npm run test` :)
 ### Public facing url
 `insert url from vercel here`
 
+### TODOS
+@see .todo 
+

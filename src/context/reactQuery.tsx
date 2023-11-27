@@ -11,7 +11,7 @@ function ReactQueryProvider({ children }: Props) {
   return (
     <QueryClientProvider client={queryClient}>
       {children}
-      <ReactQueryDevtools />
+      {import.meta.env.VITE_ENV === 'dev' && <ReactQueryDevtools />}
     </QueryClientProvider>
   );
 }

@@ -17,7 +17,8 @@ export const LOGO_SIZE_LG = {
 };
 
 // If this was a prod website we'd use a more robust solution than this
-// storing the translation nodes in the DB.
+// storing the translation nodes in the DB or locale/en... and
+// using i18next, why i wrote my own transation package? no idea...was late, was tired.
 export const TRANSLATIONS = {
   global: {
     maxStock: {
@@ -28,6 +29,30 @@ export const TRANSLATIONS = {
       sr: 'Ako želite ukloniti artikal, pristinite Ukloni',
       en: 'To remove a product click on Remove',
     },
+    limit: {
+      sr: 'Jedan je najmanji kvantitet koji se može dodati u korpu',
+      en: 'The least amount of products in your cart is one',
+    },
+    noStock: {
+      sr: 'Artikal trenutno nije na stanju',
+      en: "The product currently isn't available",
+    },
+    header: {
+      login: {
+        sr: 'Prijavi se',
+        en: 'Log in',
+      },
+      logout: {
+        sr: 'Odjavi se',
+        en: 'Log out',
+      },
+    },
+  },
+  productPage: {
+    h1: {
+      sr: 'Svi Proizvodi',
+      en: 'All Products',
+    },
   },
   '/': {
     count: {
@@ -37,6 +62,56 @@ export const TRANSLATIONS = {
     h1: {
       sr: 'Svi Proizvodi',
       en: 'All Products',
+    },
+  },
+  '/login': {
+    h1: {
+      sr: 'Prijavi se na svoj nalog',
+      en: 'Sign in using your account',
+    },
+    button: {
+      modal: {
+        sr: 'Potvrdi',
+        en: 'Submit',
+      },
+      google: {
+        sr: 'Prijeva preko Google naloga',
+        en: 'Sign in with Google',
+      },
+      create: {
+        sr: 'Napravite nalog',
+        en: 'Create account',
+      },
+      signin: {
+        sr: 'Prijavi se na nalog',
+        en: 'Sign in',
+      },
+    },
+    form: {
+      required: {
+        sr: 'Ovo polje je obavezno',
+        en: 'This field is mandatory',
+      },
+      modalTitle: {
+        sr: 'Kreiranje naloga',
+        en: 'Account creation',
+      },
+      email: {
+        sr: 'E-mail adresa',
+        en: 'E-mail address',
+      },
+      pass: {
+        sr: 'Upišite šifru',
+        en: 'Password',
+      },
+      name: {
+        sr: 'Korisničko ime',
+        en: 'Username',
+      },
+      passV: {
+        sr: 'Potvrdite šifru',
+        en: 'Confirm password',
+      },
     },
   },
   '/cart': {
@@ -65,9 +140,17 @@ export const TRANSLATIONS = {
       },
     },
     info: {
-      button: {
+      buttonNoAuth: {
         sr: 'Prijavi se za brže plaćanje',
         en: 'Login for faster payment',
+      },
+      buttonAuth: {
+        sr: 'Plati',
+        en: 'Pay',
+      },
+      payed: {
+        sr: 'Porudžbina uspešna!',
+        en: 'Payment successfull!',
       },
       h4: {
         sr: 'Tvoja narudžbina',
@@ -81,9 +164,13 @@ export const TRANSLATIONS = {
         sr: 'Ušteda',
         en: 'Saving',
       },
-      row3: {
+      row3a: {
         sr: 'Isporuka',
         en: 'Delivery',
+      },
+      row3b: {
+        sr: 'Besplatno',
+        en: 'Free',
       },
       row4: {
         sr: 'Ukupno za uplatu',

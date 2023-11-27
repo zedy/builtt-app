@@ -25,9 +25,15 @@ function ProductItem(props: ProductObject) {
   const [counter, setCounter] = useState<number>(1);
   const [hover, setHover] = useState<boolean>(false);
   const { title, image, price, id, stock } = props;
-  const module = get(TRANSLATIONS, 'global');
+  const localT = get(TRANSLATIONS, 'global');
 
   const addToCart = () => {
+    if (stock < 1) {
+      toast.dismiss();
+      toast.error(get(localT.noStock, lang));
+      return;
+    }
+
     setCart({
       id,
       count: counter,
@@ -37,6 +43,8 @@ function ProductItem(props: ProductObject) {
 
   const counterDecrease = () => {
     if (counter === 1) {
+      toast.dismiss();
+      toast.error(get(localT.limit, lang));
       return;
     }
 
@@ -46,7 +54,7 @@ function ProductItem(props: ProductObject) {
   const counterIncrease = () => {
     if (counter === stock) {
       toast.dismiss();
-      toast.error(get(module.maxStock, lang));
+      toast.error(get(localT.maxStock, lang));
       return;
     }
 
@@ -92,7 +100,7 @@ function ProductItem(props: ProductObject) {
             </div>
             <button
               type="button"
-              disabled={stock < 1}
+              // disabled={stock < 1}
               onClick={addToCart}
               className={`${
                 stock > 0 ? 'bg-gray-900' : 'bg-gray-600 cursor-not-allowed'
@@ -104,15 +112,15 @@ function ProductItem(props: ProductObject) {
         </div>
         <div className="product-info bg-white">
           <WithLink href={`/product/${id}`}>
-            <div className="w-full text-gray-900 text-lg font-bold font-['Arial'] leading-normal mt-3">
+            <div className="w-full text-gray-900 text-lg font-bold leading-normal mt-3">
               {get(title, lang)}
             </div>
           </WithLink>
           <div className="w-20 h-8 justify-start items-start gap-1 inline-flex mt-3">
-            <div className="text-black text-2xl font-normal font-['Arial'] leading-normal">
+            <div className="text-black text-2xl font-normal leading-normal">
               {price}
             </div>
-            <div className="text-black text-xs font-normal font-['Arial'] leading-none tracking-wide">
+            <div className="text-black text-xs font-normal leading-none tracking-wide">
               RSD
             </div>
           </div>

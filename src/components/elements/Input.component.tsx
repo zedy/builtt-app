@@ -1,5 +1,5 @@
 // libs
-import { FieldErrors, UseFormRegister } from 'react-hook-form';
+import { FieldErrors } from 'react-hook-form';
 import { get } from 'lodash';
 import { forwardRef } from 'react';
 
@@ -21,7 +21,7 @@ type Props = {
   onChange: () => void;
 };
 
-type FormValues = Props;
+// type FormValues = Props;
 
 function InputElement(
   { onChange, onBlur, name, label, type, error }: Props,
@@ -31,6 +31,7 @@ function InputElement(
     <div className="w-full bg-transparent mb-4">
       <div className="relative z-1 h-16">
         <input
+          id={name}
           name={name}
           ref={ref}
           onChange={onChange}
@@ -38,7 +39,7 @@ function InputElement(
           type={type}
           placeholder=" "
           className="z-20 w-full py-3 px-0 h-12 bg-transparent text-gray-900 placeholder-transparent
-          text-base font-normal font-['Arial'] leading-7 border-0 border-b-[1px] border-neutral-500 appearance-none
+          text-base font-normal leading-7 border-0 border-b-[1px] border-neutral-500 appearance-none
           peer focus:outline-none focus:ring-0 focus:border-gray-900"
         />
         <label

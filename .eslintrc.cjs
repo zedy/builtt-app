@@ -35,6 +35,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'react/jsx-props-no-spreading': 0,
     'react/button-has-type': 0,
+    '@typescript-eslint/dot-notation': 0,
     'import/extensions': 0,
   },
 };

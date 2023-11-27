@@ -1,6 +1,3 @@
-// libs
-import { find } from 'lodash';
-
 // components
 import { Order, useStore } from '@/store';
 import CartItem from './CartItem';
@@ -12,12 +9,12 @@ function CartList() {
 
   return (
     <div className="cart w-full lg:w-2/3">
-      {cart.map((item) => {
-        const product = find(products, {
-          id: item.id,
-        });
+      {cart.map((cartItem) => {
+        const product: ProductObject = products.find(
+          (item: ProductObject) => item.id === cartItem.id
+        )!;
 
-        return <CartItem key={item.id} product={product} cart={item} />;
+        return <CartItem key={cartItem.id} product={product} cart={cartItem} />;
       })}
     </div>
   );

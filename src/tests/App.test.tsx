@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable import/no-extraneous-dependencies */
 // libs
 import { describe, expect, it } from 'vitest';
@@ -8,11 +9,12 @@ import { MemoryRouter } from 'react-router-dom';
 // https://testing-library.com/docs/ecosystem-jest-dom/
 
 // dev written
-import { App, WrappedApp } from '../App';
+import App from '../App';
 
 describe('App', () => {
   it('Renders "code goes here" string', () => {
-    render(<WrappedApp />);
+    render(<App />);
+    // @ts-ignore
     expect(screen.getByRole('heading')).toHaveTextContent('code goes here');
   });
 
@@ -22,6 +24,7 @@ describe('App', () => {
         <App />
       </MemoryRouter>
     );
+    // @ts-ignore
     expect(screen.getByRole('heading')).toHaveTextContent('404: not found');
   });
 });

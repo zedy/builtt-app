@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable import/prefer-default-export */
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
-import { User } from 'firebase/auth';
-import { ProductObject } from './utils/firebase/firebase.utils';
+import { ProductObject, User } from './utils/firebase/firebase.utils';
 import { deepCopyObj } from './utils/helpers';
 
 export type Order = {
@@ -11,6 +11,22 @@ export type Order = {
   price: number;
 };
 
+type State = {
+  currentUser: null | User;
+  currentLanguage: string;
+  products: [];
+  cart: [];
+};
+
+// initial state
+const initialState: State = {
+  currentUser: null,
+  currentLanguage: 'sr',
+  products: [],
+  cart: [],
+};
+
+// @ts-ignore
 const storeObj = (set) => ({
   currentUser: null,
   currentLanguage: 'sr',
@@ -26,16 +42,16 @@ const storeObj = (set) => ({
   ],
   switchLanguage: (language: string) =>
     set(
-      (store) => ({
+      (store: State) => ({
         ...store,
         currentLanguage: language,
       }),
       false,
       'user logged in'
     ),
-  loginUser: (user: User) =>
+  loginUser: (user: User | null) =>
     set(
-      (store) => ({
+      (store: State) => ({
         ...store,
         currentUser: user,
       }),
@@ -44,7 +60,7 @@ const storeObj = (set) => ({
     ),
   logoutUser: () =>
     set(
-      (store) => ({
+      (store: State) => ({
         ...store,
         currentUser: null,
       }),
@@ -54,7 +70,7 @@ const storeObj = (set) => ({
   products: [],
   setProducts: (products: ProductObject[]) =>
     set(
-      (store) => ({
+      (store: State) => ({
         ...store,
         products,
       }),
@@ -64,16 +80,38 @@ const storeObj = (set) => ({
   cart: [],
   setCart: (order: Order) =>
     set(
-      (store) => ({
-        ...store,
-        cart: [...store.cart, order],
-      }),
+      (store: State) => {
+        // if we add the same item that's already in the cart, just increase cart count
+        // by the number in the counter
+        if (store.cart.find((item: Order) => item.id === order.id)) {
+          const storeCopy: Order[] = deepCopyObj(store.cart);
+          const newCart = storeCopy.map((cart: Order) => {
+            const cartCopy = deepCopyObj(cart);
+
+            if (cart.id === order.id) {
+              cartCopy.count += order.count;
+            }
+
+            return cartCopy;
+          });
+
+          return {
+            ...store,
+            cart: [...newCart],
+          };
+        }
+
+        return {
+          ...store,
+          cart: [...store.cart, order],
+        };
+      },
       false,
       'cart updated'
     ),
   removeItemFromCart: (id: number) =>
     set(
-      (store) => ({
+      (store: State) => ({
         ...store,
         cart: [...store.cart.filter((item: Order) => item.id !== id)],
       }),
@@ -82,7 +120,7 @@ const storeObj = (set) => ({
     ),
   updateItemCount: (id: number, action: string) =>
     set(
-      (store) => ({
+      (store: State) => ({
         ...store,
         cart: [
           ...store.cart.map((item: Order): Order => {
@@ -104,9 +142,18 @@ const storeObj = (set) => ({
     ),
   clearCart: () =>
     set(
-      (store) => ({
+      (store: State) => ({
         ...store,
         cart: [],
+      }),
+      false,
+      'cart cleared'
+    ),
+  resetStore: () =>
+    set(
+      (store: State) => ({
+        ...store,
+        ...initialState,
       }),
       false,
       'cart cleared'

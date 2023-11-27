@@ -1,0 +1,5 @@
+- implement i18next instead of my own "i18"
+- implement search filters for product page
+- write tests
+- rewrite the store to be more readable and modular
+- do performance tests (to check any avoidable re-renders)

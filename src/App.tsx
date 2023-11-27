@@ -1,13 +1,14 @@
 // libs
 import { useEffect } from 'react';
-import { RouterProvider, redirect } from 'react-router-dom';
-import { User } from 'firebase/auth';
+import { RouterProvider } from 'react-router-dom';
+import { User as AuthUser } from 'firebase/auth';
 import { Toaster } from 'react-hot-toast';
 
 // components
 import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
+  User,
 } from './utils/firebase/firebase.utils';
 import { useStore } from './store';
 import Router from './router/Router';
@@ -16,13 +17,14 @@ function App() {
   const loginUser = useStore((store) => store.loginUser);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user: User) => {
+    const unsubscribe = onAuthStateChangedListener(async (user: AuthUser) => {
+      let userData = null;
+
       if (user) {
-        createUserDocumentFromAuth(user);
+        userData = (await createUserDocumentFromAuth(user)) || null;
       }
 
-      loginUser(user);
-      return redirect('/products');
+      loginUser(userData as User);
     });
 
     return unsubscribe;
@@ -30,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App w-screen h-screen">
+    <div className="App w-screen h-screen overflow-x-hidden font-nunito">
       <RouterProvider router={Router} />
       <Toaster />
     </div>

@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // libs
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import toast from 'react-hot-toast';
+import { get } from 'lodash';
 import { FirebaseError } from '@firebase/util';
 
 // components
@@ -17,6 +19,8 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from '@/utils/firebase/firebase.utils';
+import { useStore } from '@/store';
+import { TRANSLATIONS } from '@/utils/consts';
 
 const getCharacterValidationError = (str: string) => {
   return `Your password must have at least 1 ${str} character`;
@@ -56,6 +60,8 @@ type Props = {
 };
 
 function SignUpForm({ callback }: Props) {
+  const lang = useStore((store) => store.currentLanguage);
+  const localT = get(TRANSLATIONS, '/login');
   const { setIsLoading } = useContext(ModalContext);
 
   const {
@@ -98,41 +104,48 @@ function SignUpForm({ callback }: Props) {
 
   return (
     <div className="w-full">
-      <div className="text-black text-xl font-bold font-['Arial'] leading-normal tracking-tight mb-12">
-        Prijavi se na svoj nalog
-      </div>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full">
         <input
           type="hidden"
           defaultValue="user"
           {...register('role', { required: true })}
         />
+        {/* @ts-ignore | @see comment in input.component */}
         <InputElement
-          label="Korisničko ime *"
+          label={`${get(localT.form.name, lang)} *`}
           type={InputType.Text}
           error={errors}
-          {...register('displayName', { required: true })}
+          {...register('displayName', {
+            required: get(localT.form.required, lang),
+          })}
         />
+        {/* @ts-ignore | @see comment in input.component */}
         <InputElement
-          label="E-mail adresa *"
+          label={`${get(localT.form.email, lang)} *`}
           type={InputType.Email}
           error={errors}
-          {...register('email', { required: true })}
+          {...register('email', { required: get(localT.form.required, lang) })}
         />
+        {/* @ts-ignore | @see comment in input.component */}
         <InputElement
-          label="Upišite šifru *"
+          label={`${get(localT.form.pass, lang)} *`}
           type={InputType.Pass}
           error={errors}
-          {...register('password', { required: true })}
+          {...register('password', {
+            required: get(localT.form.required, lang),
+          })}
         />
+        {/* @ts-ignore | @see comment in input.component */}
         <InputElement
-          label="Potvrdite šifru *"
+          label={`${get(localT.form.passV, lang)} *`}
           type={InputType.Pass}
           error={errors}
-          {...register('passwordVerify', { required: true })}
+          {...register('passwordVerify', {
+            required: get(localT.form.required, lang),
+          })}
         />
         <div className="w-full mt-12">
-          <Button type="submit">Potvrdi</Button>
+          <Button type="submit">{get(localT.button.modal, lang)}</Button>
         </div>
       </form>
     </div>

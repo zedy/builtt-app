@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,
@@ -10,7 +12,7 @@ import {
   onAuthStateChanged,
   sendEmailVerification,
   UserCredential,
-  User,
+  User as AuthUser,
 } from 'firebase/auth';
 import {
   getFirestore,
@@ -21,19 +23,20 @@ import {
   writeBatch,
   query,
   getDocs,
+  DocumentData,
 } from 'firebase/firestore';
 import { get } from 'lodash';
 
-// TODO: move to ENV
 const firebaseConfig = {
-  apiKey: 'AIzaSyBLMvCFGg4JhHBnD4QvQibw59kqAsCGcaE',
-  authDomain: 'builtt-app.firebaseapp.com',
-  projectId: 'builtt-app',
-  storageBucket: 'builtt-app.appspot.com',
-  messagingSenderId: '514568602125',
-  appId: '1:514568602125:web:d4465b359548fa4cb94b44',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
+// @ts-ignore
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
@@ -50,8 +53,15 @@ export const signInWithGoogleRedirect = () =>
 
 export const db = getFirestore();
 
+export type User = {
+  displayName: string;
+  email: string;
+  role?: string;
+  createdAt: Date;
+} & DocumentData;
+
 export const createUserDocumentFromAuth = async (
-  userAuth: User,
+  userAuth: AuthUser,
   additionalInformation = {}
 ) => {
   if (!userAuth) return undefined;
@@ -78,7 +88,7 @@ export const createUserDocumentFromAuth = async (
     }
   }
 
-  return userSnapshot;
+  return userSnapshot.data();
 };
 
 export const createAuthUserWithEmailAndPassword = async (
@@ -103,8 +113,10 @@ export const signInAuthUserWithEmailAndPassword = async (
 
 export const signOutUser = async () => signOut(auth);
 
-export const onAuthStateChangedListener = (callback: () => void) =>
-  onAuthStateChanged(auth, callback);
+export const onAuthStateChangedListener = (
+  callback: (user: AuthUser) => void
+  // @ts-ignore
+) => onAuthStateChanged(auth, callback);
 
 export type ProductObject = {
   id: number;

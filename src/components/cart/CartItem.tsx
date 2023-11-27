@@ -62,7 +62,7 @@ function CartItem(props: Props) {
         <div className="product-info bg-white pl-9 flex flex-col justify-between">
           <div>
             <WithLink href={`/product/${id}`}>
-              <div className="w-full text-gray-900 text-xl font-bold font-['Arial'] leading-normal pr-9">
+              <div className="w-full text-gray-900 text-xl font-bold leading-normal pr-9">
                 {get(title, lang)}
               </div>
             </WithLink>
@@ -74,10 +74,10 @@ function CartItem(props: Props) {
           </div>
           <div className="flex">
             <div className="h-8 justify-start items-start gap-1 inline-flex mt-3 md:hidden">
-              <div className="text-black text-2xl font-normal font-['Arial'] leading-normal">
+              <div className="text-black text-2xl font-normal leading-normal">
                 {parsePriceWithDecimal(productPrice)}
               </div>
-              <div className="text-black text-xs font-normal font-['Arial'] leading-none tracking-wide">
+              <div className="text-black text-xs font-normal leading-none tracking-wide">
                 RSD
               </div>
             </div>
@@ -112,10 +112,10 @@ function CartItem(props: Props) {
         </div>
       </div>
       <div className="h-8 justify-start items-start gap-1 inline-flex">
-        <div className="text-black text-2xl font-normal font-['Arial'] leading-normal">
+        <div className="text-black text-2xl font-normal leading-normal">
           {parsePriceWithDecimal(productPrice)}
         </div>
-        <div className="text-black text-xs font-normal font-['Arial'] leading-none tracking-wide">
+        <div className="text-black text-xs font-normal leading-none tracking-wide">
           RSD
         </div>
       </div>

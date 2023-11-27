@@ -15,7 +15,7 @@ type Props = {
   type?: 'button' | 'submit' | 'reset' | undefined;
 };
 
-const DEFAULT_CLASS = `py-3 w-full rounded-full transition-all font-normal font-['Arial'] leading-none text-lg`;
+const DEFAULT_CLASS = `py-3 w-full rounded-full transition-all font-normal leading-none text-lg`;
 
 function Button({
   children,
